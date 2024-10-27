@@ -4,9 +4,11 @@ import pickle
 from flask import Flask, request, jsonify
 
 model_fname = os.getenv('MODEL_FILE_NAME', 'model1.bin')
+print(model_fname)
 
 with open(model_fname, 'rb') as f_in:
     model = pickle.load(f_in)
+print("load model")
 
 with open('dv.bin', 'rb') as f_in:
     dv = pickle.load(f_in)
