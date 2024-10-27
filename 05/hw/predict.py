@@ -1,10 +1,11 @@
+import os
 import pickle
 
-from flask import Flask
-from flask import request
-from flask import jsonify
+from flask import Flask, request, jsonify
 
-with open('model1.bin', 'rb') as f_in:
+model_fname = os.getenv('MODEL_FILE_NAME', 'model1.bin')
+
+with open(model_fname, 'rb') as f_in:
     model = pickle.load(f_in)
 
 with open('dv.bin', 'rb') as f_in:
