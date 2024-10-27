@@ -11,15 +11,6 @@ with open(model_fname, 'rb') as f_in:
 with open('dv.bin', 'rb') as f_in:
     dv = pickle.load(f_in)
 
-model_file = 'model1.bin'
-dv_file = 'dv.bin'
-
-with open('model1.bin', 'rb') as f_in:
-    model = pickle.load(f_in)
-
-with open('dv.bin', 'rb') as f_in:
-    dv = pickle.load(f_in)
-
 app = Flask('subscription')
 
 @app.route('/predict', methods=['POST'])
